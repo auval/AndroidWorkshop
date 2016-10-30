@@ -17,7 +17,14 @@ Android Development Workshop
 
 #### Installing & Configuring Android Studio
 
-1. Plugins:
-  - Grep Console
+
+Settings: ctrl-alt-a
+
+Install Android SDK's
+
+Plugins:
   - .ignore
-  
+  - Markdown Support (JetBrain)
+  - Grep Console
+
+
