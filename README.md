@@ -15,3 +15,9 @@ Android Development Workshop
 
 [Slides](http://goo.gl/j8laap)
 
+#### Installing & Configuring Android Studio
+
+1. Plugins:
+  - Grep Console
+  - .ignore
+  
