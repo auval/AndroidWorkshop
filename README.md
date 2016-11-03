@@ -38,4 +38,8 @@ Useful **git** commands:
 - git log
 - git show: Show various types of objects
 - git tag: tag specific points in history as being important
-  - for example, this commit was tagged with annotation and comment:  git tag -a 2 -m "lecture #2"
+  - for example, these commits were tagged with annotation and comment:
+      - git tag -a 2 -m "lecture #2"
+      - git tag -a 2.1 -m "lecture #2.1"
+  - you can now jump between them using:
+      - git checkout 2  (..or 2.1)
