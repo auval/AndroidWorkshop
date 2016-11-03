@@ -56,19 +56,26 @@ public class MainActivity extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                showBooDelayed(String.valueOf(name.getText()));
                 name.setText("Oh no!");
-                showBooDelayed();
             }
         });
-
     }
 
-    private void showBooDelayed() {
+    /**
+     * the "final" in the parameter allows the variable to be accessible from the anonymous class
+     *
+     * @param nameString
+     */
+    private void showBooDelayed(final String nameString) {
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent intent = new Intent(getBaseContext(), BooActivity.class);
+                if (!nameString.isEmpty()) {
+                    intent.putExtra("name", nameString);
+                }
                 startActivity(intent);
             }
         }, 1000);
