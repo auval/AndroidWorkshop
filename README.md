@@ -32,3 +32,10 @@ Plugins:
 
 [Slides](https://goo.gl/4EHTQi)
 
+Useful **git** commands:
+
+- git status
+- git log
+- git show: Show various types of objects
+- git tag: tag specific points in history as being important
+  - for example, this commit was tagged with annotation and comment:  git tag -a 2 -m "lecture #2"
