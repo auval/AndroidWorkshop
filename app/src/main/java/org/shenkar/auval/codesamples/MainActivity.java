@@ -1,6 +1,8 @@
 package org.shenkar.auval.codesamples;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,7 +15,7 @@ import android.widget.Toast;
  * - Relative Layout
  * - findViewById
  * - setting listeners
- *
+ * <p>
  * Warning: Hard-coded strings and not RTL in mind yet
  *
  * @author Amir
@@ -54,10 +56,22 @@ public class MainActivity extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                name.setText("Boo!");
+                name.setText("Oh no!");
+                showBooDelayed();
             }
         });
 
+    }
+
+    private void showBooDelayed() {
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(getBaseContext(), BooActivity.class);
+                startActivity(intent);
+            }
+        }, 1000);
     }
 
     public void buttonWasPressed(View v) {
