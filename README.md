@@ -28,3 +28,7 @@ Plugins:
   - Grep Console
 
 
+### Lesson #2
+
+[Slides](https://goo.gl/4EHTQi)
+
