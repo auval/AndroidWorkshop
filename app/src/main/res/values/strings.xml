@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">CodeSamples</string>
+    <string name="app_name">Android Workshop</string>
+    <string name="exercises">Exercises</string>
 </resources>

@@ -49,3 +49,7 @@ Useful **git** commands:
 
 [Slides](https://goo.gl/P2hWLP)
 
+- class exercise:
+  - Refactoring: rename MainActivity and related layout to Lesson2Activity and lesson2_layout
+  - Create a new MainActivity to serve as a high level menu for exercises
+  - Mark the new activity as MAIN in the manifest

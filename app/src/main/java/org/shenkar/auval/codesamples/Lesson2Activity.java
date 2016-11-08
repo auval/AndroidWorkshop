@@ -26,7 +26,7 @@ public class Lesson2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.lesson2_activity);
 
         name = (EditText) findViewById(R.id.the_name);
 
