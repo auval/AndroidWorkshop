@@ -81,7 +81,7 @@ public final class AsyncHandler {
 
     /**
      * beware:
-     * it will not fire while in deep sleep. (as hansdler depends on
+     * it will not fire while in deep sleep. (as handler depends on
      * uptimeMillis = not advancing while off).
      * deep sleep will postpone post.
      *
@@ -98,7 +98,7 @@ public final class AsyncHandler {
 
     /**
      * beware:
-     * it will not fire while in deep sleep. (as hansdler depends on
+     * it will not fire while in deep sleep. (as handler depends on
      * uptimeMillis = not advancing while off).
      * deep sleep will postpone post.
      *

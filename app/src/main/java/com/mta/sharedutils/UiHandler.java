@@ -74,7 +74,7 @@ public final class UiHandler {
     /**
      * Caution: posting delayed runnable that is not static will very likely cause a memory leak!
      * beware 2:
-     * it will not fire while in deep sleep. (as hansdler depends on uptimeMillis = not advancing while off).
+     * it will not fire while in deep sleep. (as handler depends on uptimeMillis = not advancing while off).
      * deep sleep will postpone post.
      *
      * @param r
