@@ -43,3 +43,9 @@ Useful **git** commands:
       - git tag -a 2.1 -m "lecture #2.1"
   - you can now jump between them using:
       - git checkout 2  (..or 2.1)
+
+
+### Lesson #3
+
+[Slides](https://goo.gl/P2hWLP)
+

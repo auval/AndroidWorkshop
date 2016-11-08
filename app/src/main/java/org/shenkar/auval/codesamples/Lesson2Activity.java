@@ -20,7 +20,7 @@ import android.widget.Toast;
  *
  * @author Amir
  */
-public class MainActivity extends AppCompatActivity {
+public class Lesson2Activity extends AppCompatActivity {
     EditText name;
 
     @Override
