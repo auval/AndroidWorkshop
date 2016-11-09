@@ -1,11 +1,21 @@
 package org.shenkar.auval.codesamples;
 
+import android.animation.LayoutTransition;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
+import android.support.transition.ChangeBounds;
+import android.support.transition.Scene;
+import android.support.transition.Transition;
+import android.support.transition.TransitionManager;
+import android.support.v4.view.ViewCompat;
+import android.support.v4.view.ViewGroupCompat;
+import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 /**
@@ -16,6 +26,8 @@ import android.widget.Toast;
  * @author amir uval
  */
 public class ActionbarExampleActivity extends AppCompatActivity {
+
+    int size = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +44,7 @@ public class ActionbarExampleActivity extends AppCompatActivity {
         // setDisplayHomeAsUpEnabled() displays a left button.
         // It uses android:parentActivityName="..." from the manifest
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
     }
 
@@ -65,5 +78,47 @@ public class ActionbarExampleActivity extends AppCompatActivity {
     public void doShowBar(View view) {
         // will animate if this flag is defined at the parent:    android:animateLayoutChanges="true"
         getSupportActionBar().show();
+    }
+
+    /**
+     * messing around with the squares in the middle of the view
+     *
+     * @param view the FAB when pressed
+     */
+    public void doAction(View view) {
+        View blue = findViewById(R.id.blue_example);
+        if (size == 0) {
+            size = (int) getResources().getDimension(R.dimen.squares_size);
+        }
+        ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) blue.getLayoutParams();
+
+        if (Math.random() < 0.5) {
+            layoutParams.bottomToTop = R.id.pink_example;
+            layoutParams.topToBottom = -1;
+        } else {
+            layoutParams.bottomToTop = -1;
+            layoutParams.topToBottom = R.id.pink_example;
+        }
+
+        if (Math.random() < 0.5) {
+            layoutParams.leftToRight = -1;
+            layoutParams.rightToLeft = R.id.pink_example;
+        } else {
+            layoutParams.leftToRight = R.id.pink_example;
+            layoutParams.rightToLeft = -1;
+        }
+
+        blue.setLayoutParams(layoutParams);
+
+        // animating layout change!
+        Transition transition = new ChangeBounds();
+        transition.setDuration(1000);
+
+        // options: FastOutLinearInInterpolator, AccelerateInterpolator, LinearOutSlowInInterpolator
+        transition.setInterpolator(new FastOutSlowInInterpolator());
+        transition.setStartDelay(200);
+        TransitionManager.beginDelayedTransition(((ViewGroup) blue.getParent()), transition);
+
+
     }
 }
