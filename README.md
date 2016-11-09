@@ -49,7 +49,22 @@ Useful **git** commands:
 
 [Slides](https://goo.gl/P2hWLP)
 
-- class exercise:
+####class exercise
+
+
+- Make main menu for excercises
   - Refactoring: rename MainActivity and related layout to Lesson2Activity and lesson2_layout
   - Create a new MainActivity to serve as a high level menu for exercises
   - Mark the new activity as MAIN in the manifest
+- creating App Toolbar activity (probably will not finish in class - continue as homework)
+  - Follow the [tutorial](https://developer.android.com/training/appbar/index.html)
+    - It's missing some important steps, so read here as well.
+  - create an svg resource icon
+    - New > “Vector Asset” from the context menu
+  - define some menu options
+    - New > “Android resource directory” from the context menu
+    - Change the “Resource type” drop-down to be “menu”, then click OK to create the directory
+    - right-click over your new res/menu/ directory and choose New > “Menu resource file” from the context menu
+    - name it "lesson3.xml"
+    - add \<item> resources, like the example in the tutorial or your own.
+  - Add  `onCreateOptionsMenu(Menu menu) {}` to the activity, to inflate menu items

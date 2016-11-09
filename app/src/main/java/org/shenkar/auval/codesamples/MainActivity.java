@@ -3,6 +3,7 @@ package org.shenkar.auval.codesamples;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,15 +19,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mainList = (ListView) findViewById(R.id.my_list);
 
+        // define data for the list
         ArrayItem[] values = new ArrayItem[]{
                 new ArrayItem("Lecture 2: Activities communicate", Lesson2Activity.class),
-                new ArrayItem("Lecture 3: This menu", null),
+                new ArrayItem("Lecture 3: App Toolbar", ActionbarExampleActivity.class),
         };
 
+        // add the data to an adapter
         ArrayAdapter<ArrayItem> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, values);
 
+        // attach the data to the list view
         mainList.setAdapter(adapter);
 
+        // wait for click events (this is a non-blocking call!)
         mainList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
