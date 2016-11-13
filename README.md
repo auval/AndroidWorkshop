@@ -18,14 +18,16 @@ Android Development Workshop
 #### Installing & Configuring Android Studio
 
 
-Settings: ctrl-alt-a
+Settings: ctrl-alt-s
 
 Install Android SDK's
 
-Plugins:
+**Recommended Plugins**:
   - .ignore
   - Markdown Support (JetBrain)
-  - Grep Console
+  - [Grep Console](https://github.com/krasa/GrepConsole)
+
+Create a project in Android studio and upload it to your GitHub account.
 
 
 ### Lesson #2
@@ -43,7 +45,8 @@ Useful **git** commands:
       - git tag -a 2.1 -m "lecture #2.1"
   - you can now jump between them using:
       - git checkout 2  (..or 2.1)
-
+- git add .
+  - adds all unstaged files to your local git index
 
 ### Lesson #3
 
@@ -52,11 +55,17 @@ Useful **git** commands:
 ####class exercise
 
 
-- Make main menu for excercises
+- Make main menu for exercises
   - Refactoring: rename MainActivity and related layout to Lesson2Activity and lesson2_layout
   - Create a new MainActivity to serve as a high level menu for exercises
   - Mark the new activity as MAIN in the manifest
-- creating App Toolbar activity (probably will not finish in class - continue as homework)
+
+
+### Lesson #4
+
+[Slides](https://goo.gl/CXtCcy)
+
+- creating App Toolbar activity
   - Follow the [tutorial](https://developer.android.com/training/appbar/index.html)
     - It's missing some important steps, so read here as well.
   - create an svg resource icon
@@ -68,3 +77,4 @@ Useful **git** commands:
     - name it "lesson3.xml"
     - add \<item> resources, like the example in the tutorial or your own.
   - Add  `onCreateOptionsMenu(Menu menu) {}` to the activity, to inflate menu items
+
