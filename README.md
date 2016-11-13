@@ -65,6 +65,12 @@ Useful **git** commands:
 
 [Slides](https://goo.gl/CXtCcy)
 
+- clone this workspace to your local pc
+  - file -> new -> Project from version control -> GitHub
+  - paste https://github.com/auval/AndroidWorkshop.git
+  - define local directory for the workspace
+  - clone
+
 - creating App Toolbar activity
   - Follow the [tutorial](https://developer.android.com/training/appbar/index.html)
     - It's missing some important steps, so read here as well.
