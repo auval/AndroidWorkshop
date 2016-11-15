@@ -133,6 +133,16 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         }
     }
 
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
     /**
      * {@inheritDoc}
      */
