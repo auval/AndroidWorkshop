@@ -17,9 +17,6 @@ Android Development Workshop
 
 #### Installing & Configuring Android Studio
 
-
-Settings: ctrl-alt-s
-
 Install Android SDK's
 
 **Recommended Plugins**:
@@ -27,7 +24,28 @@ Install Android SDK's
   - Markdown Support (JetBrain)
   - [Grep Console](https://github.com/krasa/GrepConsole)
 
-Create a project in Android studio and upload it to your GitHub account.
+**Useful Android Studio shortcuts**: [(And More Shortcuts)](https://gautam.io/work/android_studio_shortcuts/)
+ 
+|	**Operation**	|	**Shortcut**	|
+|	---	|	:---	|
+|	Comment line	|	Ctrl+/	|
+|	Duplicate line (or selection)	|	ctrl+d	|
+|	Go to last edited location	|	ctrl+shift+Backspace	|
+|	Jump to a particular type or file	|	Shift, Shift	|
+|	Move lines up *or* down	|	ctrl+shift+up *or* ctrl+shift+down arrow	|
+|	Navigate left	|	Alt+Left arrow (Mac: Command+Shift+[)	|
+|	Navigate right	|	Alt+right arrow (Mac: Command+Shift+])	|
+|	Navigate to the source definition	|	Windows+Click (Linux: ctrl+click, Mac: Command+click)	|
+|	Open Settings	|	ctrl+alt+s	|
+|	Organize the import statements	|	Ctrl+Alt+O	|
+|	Reformat file	|	alt+ctrl+shit+L	|
+|	Rename an object	|	Shift+F6	|
+|	Search through files	|	Ctrl+Shift+F  (Mac: Command+Shift+F)	|
+
+Tips:
+* Use middle button of the mouse to select across rows, and edit all.
+
+Homework: Create a project in Android studio and upload it to your GitHub account.
 
 
 ### Lesson #2
@@ -46,7 +64,7 @@ Useful **git** commands:
   - you can now jump between them using:
       - git checkout 2  (..or 2.1)
 - git add .
-  - adds all unstaged files to your local git index
+  - adds all un-staged files to your local git index
 
 ### Lesson #3
 

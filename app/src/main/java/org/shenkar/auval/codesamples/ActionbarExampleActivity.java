@@ -1,15 +1,11 @@
 package org.shenkar.auval.codesamples;
 
-import android.animation.LayoutTransition;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.transition.ChangeBounds;
-import android.support.transition.Scene;
 import android.support.transition.Transition;
 import android.support.transition.TransitionManager;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.view.ViewGroupCompat;
-import android.support.v4.view.animation.FastOutSlowInInterpolator;
+ import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -17,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
 
 /**
  * References:
@@ -28,6 +25,7 @@ import android.widget.Toast;
 public class ActionbarExampleActivity extends AppCompatActivity {
 
     int size = 0;
+    Toolbar myToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +33,7 @@ public class ActionbarExampleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_actionbar_example);
 
         // Toolbar that will act as ActionBar
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+          myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
         // myToolbar is not *the* ActionBar. We need to access ActionBar via getSupportActionBar()
