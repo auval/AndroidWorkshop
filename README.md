@@ -83,6 +83,12 @@ Useful **git** commands:
 
 [Slides](https://goo.gl/CXtCcy)
 
+#### Code compare
+- [Adding action bar](https://github.com/auval/AndroidWorkshop/compare/4...4.1)
+
+
+#### Tips
+
 - clone this workspace to your local pc
   - file -> new -> Project from version control -> GitHub
   - paste https://github.com/auval/AndroidWorkshop.git
