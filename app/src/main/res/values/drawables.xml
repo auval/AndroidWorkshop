@@ -1,0 +1,7 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- I could use the same names and put in drawables folder, and not needing this: -->
+    <item name="ic_local_bar_black_24dp" type="drawable">@drawable/ic_fallback_bar</item>
+    <item name="ic_settings_black_24dp" type="drawable">@drawable/ic_fallback_settings</item>
+    <item name="ic_swap_calls_black_24dp" type="drawable">@drawable/ic_fallback_swap</item>
+</resources>
+
