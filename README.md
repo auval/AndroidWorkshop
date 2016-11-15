@@ -85,9 +85,13 @@ Useful **git** commands:
 
 #### Code compare
 - [Adding action bar](https://github.com/auval/AndroidWorkshop/compare/4...4.1)
+- [Adding settings](https://github.com/auval/AndroidWorkshop/compare/4.1...4.2)
+- [Adding back support from settings](https://github.com/auval/AndroidWorkshop/compare/4.2...4.2.1)
+
 
 #### print contect on the property file on the emulator
  `adb  -s emulator-5554 shell 'cat /data/data/org.shenkar.auval.codesamples/shared_prefs/org.shenkar.auval.codesamples_preferences.xml'`
+
 
 #### Tips
 
