@@ -8,13 +8,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        >
-
+        android:theme="@style/AppTheme">
         <activity android:name=".Lesson2Activity"/>
         <activity android:name=".BooActivity"/>
         <activity
-            android:name="MainActivity"
+            android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -24,8 +22,12 @@
         </activity>
         <activity
             android:name=".ActionbarExampleActivity"
-            android:parentActivityName="MainActivity"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" />
 
     </application>
 
