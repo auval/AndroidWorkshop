@@ -1,7 +1,9 @@
 package org.shenkar.auval.codesamples;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -10,7 +12,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.mta.sharedutils.AsyncHandler;
+import com.mta.sharedutils.UiHandler;
 
 public class MainActivity extends AppCompatActivity {
     ListView mainList;
@@ -34,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         };
 
         // add the data to an adapter
-        ArrayAdapter<ArrayItem> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, values);
+        final ArrayAdapter<ArrayItem> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, values);
 
         // attach the data to the list view
         mainList.setAdapter(adapter);
@@ -50,6 +56,31 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Intent intent = new Intent(getBaseContext(), clicked.activity);
                     startActivity(intent);
+                }
+            }
+        });
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        // I want to read from file (properties), and it's really BAD to do it on the main thread.
+        AsyncHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                final String userName = prefs.getString("example_text", "");
+                if (!userName.isEmpty()) {
+                    UiHandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            TextView tv = (TextView) findViewById(R.id.label);
+                            if (tv != null) {
+                                tv.setText(userName + "'s Examples");
+                            }
+                        }
+                    });
                 }
             }
         });
@@ -71,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.mi_settings) {
-           // Toast.makeText(getBaseContext(), "Todo: settings screen", Toast.LENGTH_LONG).show();
+            // Toast.makeText(getBaseContext(), "Todo: settings screen", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(getBaseContext(), SettingsActivity.class);
             startActivity(intent);
             return true;

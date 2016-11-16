@@ -11,6 +11,8 @@ Android Development Workshop
 
 ## Workshop Lessons
 
+---
+
 ### Lesson #1
 
 [Slides](http://goo.gl/j8laap)
@@ -47,6 +49,7 @@ Tips:
 
 Homework: Create a project in Android studio and upload it to your GitHub account.
 
+---
 
 ### Lesson #2
 
@@ -63,8 +66,11 @@ Useful **git** commands:
       - git tag -a 2.1 -m "lecture #2.1"
   - you can now jump between them using:
       - git checkout 2  (..or 2.1)
+  - you can see the diff between 2 tags (or between branches) by adding `/compare` to the end of the github workspace URL. 
 - git add .
   - adds all un-staged files to your local git index
+
+---
 
 ### Lesson #3
 
@@ -79,6 +85,8 @@ Useful **git** commands:
   - Mark the new activity as MAIN in the manifest
 
 
+---
+
 ### Lesson #4
 
 [Slides](https://goo.gl/CXtCcy)
@@ -86,10 +94,12 @@ Useful **git** commands:
 #### Code compare
 - [Adding action bar](https://github.com/auval/AndroidWorkshop/compare/4...4.1)
 - [Adding settings](https://github.com/auval/AndroidWorkshop/compare/4.1...4.2)
+   - Simply create a new "Settings Activity" from the `new > activity` command menu.  
 - [Adding back support from settings](https://github.com/auval/AndroidWorkshop/compare/4.2...4.2.1)
+   - overriding `onOptionsItemSelected()`
 
 
-#### print contect on the property file on the emulator
+#### print the content of the property file on the emulator
  `adb  -s emulator-5554 shell 'cat /data/data/org.shenkar.auval.codesamples/shared_prefs/org.shenkar.auval.codesamples_preferences.xml'`
 
 
@@ -114,3 +124,4 @@ Useful **git** commands:
     - add \<item> resources, like the example in the tutorial or your own.
   - Add  `onCreateOptionsMenu(Menu menu) {}` to the activity, to inflate menu items
 
+---
