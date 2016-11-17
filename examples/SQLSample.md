@@ -1,3 +1,8 @@
+Copy & paste this sql code to a sqlite3 terminal.<br/>
+The terminal can be your pc with a local [installation of sqlite3](https://sqlite.org/download.html).<br/>
+Or you can `adb shell` to your Android emulator, and look for your app under `/data/data/....your.pname.here../databases` and then type `sqlite3 your.db`.
+
+
 <pre>
 sqlite3 
 

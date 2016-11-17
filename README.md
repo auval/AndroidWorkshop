@@ -100,7 +100,7 @@ Useful **git** commands:
 - [Showing how to read values from SharedPreferences](https://github.com/auval/AndroidWorkshop/compare/4.2.1...4.2.2)
   - And using AsyncHandler and UiHandler on the way
 - [Showing how to write values to SharedPreferences from code](https://github.com/auval/AndroidWorkshop/compare/4.2.2...4.2.3)
-- [Added SQL implementation and example](/compare/4.2.3...4.3)
+- [Added SQL implementation and example](https://github.com/auval/AndroidWorkshop/compare/4.2.3...4.3)
 
 
 #### print the content of the property file on the emulator
