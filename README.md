@@ -95,8 +95,8 @@ Useful **git** commands:
 - [Adding action bar](https://github.com/auval/AndroidWorkshop/compare/4...4.1)
 - [Adding settings](https://github.com/auval/AndroidWorkshop/compare/4.1...4.2)
    - Simply create a new "Settings Activity" from the `new > activity` command menu.  
-- [Adding back support from settings](https://github.com/auval/AndroidWorkshop/compare/4.2...4.2.1)
-   - overriding `onOptionsItemSelected()`
+- [Enabling "< Back" from settings](https://github.com/auval/AndroidWorkshop/compare/4.2...4.2.1)
+   - By overriding `onOptionsItemSelected()`
 - [Showing how to read values from SharedPreferences](https://github.com/auval/AndroidWorkshop/compare/4.2.1...4.2.2)
   - And using AsyncHandler and UiHandler on the way
 - [Showing how to write values to SharedPreferences from code](https://github.com/auval/AndroidWorkshop/compare/4.2.2...4.2.3)
@@ -104,6 +104,8 @@ Useful **git** commands:
 #### print the content of the property file on the emulator
  `adb  -s emulator-5554 shell 'cat /data/data/org.shenkar.auval.codesamples/shared_prefs/org.shenkar.auval.codesamples_preferences.xml'`
 
+
+#### [Playing with SQL](examples/SQLSample.md)
 
 #### Tips
 

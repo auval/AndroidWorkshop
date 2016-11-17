@@ -18,8 +18,22 @@ import android.widget.Toast;
 import com.mta.sharedutils.AsyncHandler;
 import com.mta.sharedutils.UiHandler;
 
+import org.shenkar.auval.db.DbHelper;
+
 public class MainActivity extends AppCompatActivity {
+
     ListView mainList;
+
+    public MainActivity() {
+        AsyncHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // creates the db if it's the first time
+                // just loads otherwise
+                DbHelper.getDb(MainActivity.this);
+            }
+        }, 1000, true);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayItem[] values = new ArrayItem[]{
                 new ArrayItem("Lecture 2: Activities communicate", Lesson2Activity.class),
                 new ArrayItem("Lecture 3: App Toolbar", ActionbarExampleActivity.class),
+                new ArrayItem("Lecture 4: SQlite", SqlExample.class),
         };
 
         // add the data to an adapter
