@@ -99,6 +99,7 @@ Useful **git** commands:
    - overriding `onOptionsItemSelected()`
 - [Showing how to read values from SharedPreferences](https://github.com/auval/AndroidWorkshop/compare/4.2.1...4.2.2)
   - And using AsyncHandler and UiHandler on the way
+- [Showing how to write values to SharedPreferences from code](https://github.com/auval/AndroidWorkshop/compare/4.2.2...4.2.3)
 
 #### print the content of the property file on the emulator
  `adb  -s emulator-5554 shell 'cat /data/data/org.shenkar.auval.codesamples/shared_prefs/org.shenkar.auval.codesamples_preferences.xml'`
