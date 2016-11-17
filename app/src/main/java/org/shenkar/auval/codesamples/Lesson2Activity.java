@@ -1,14 +1,19 @@
 package org.shenkar.auval.codesamples;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.mta.sharedutils.AsyncHandler;
+import com.mta.sharedutils.UiHandler;
 
 /**
  * Lesson 2 example:
@@ -29,6 +34,21 @@ public class Lesson2Activity extends AppCompatActivity {
         setContentView(R.layout.lesson2_activity);
 
         name = (EditText) findViewById(R.id.the_name);
+
+        AsyncHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                SharedPreferences prefs = PreferenceManager
+                        .getDefaultSharedPreferences(getBaseContext());
+                final String displayName = prefs.getString("display_name", "");
+                UiHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        name.setText(displayName);
+                    }
+                });
+            }
+        });
 
         final View b1 = findViewById(R.id.button1);
 
@@ -81,8 +101,23 @@ public class Lesson2Activity extends AppCompatActivity {
         }, 1000);
     }
 
+    /**
+     * it's callback on the UI thread: not allowed to write to file on this thread!
+     *
+     * @param v
+     */
     public void buttonWasPressed(View v) {
         Toast.makeText(this, "hello " + name.getText(), Toast.LENGTH_LONG).show();
+        AsyncHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                SharedPreferences prefs = PreferenceManager
+                        .getDefaultSharedPreferences(getBaseContext());
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("display_name", name.getText().toString());
+                editor.commit();
+            }
+        });
     }
 
 

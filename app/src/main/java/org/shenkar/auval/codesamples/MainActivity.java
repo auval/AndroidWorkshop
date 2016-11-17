@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                final String userName = prefs.getString("example_text", "");
+                final String userName = prefs.getString("display_name", "");
                 if (!userName.isEmpty()) {
                     UiHandler.post(new Runnable() {
                         @Override

@@ -97,7 +97,8 @@ Useful **git** commands:
    - Simply create a new "Settings Activity" from the `new > activity` command menu.  
 - [Adding back support from settings](https://github.com/auval/AndroidWorkshop/compare/4.2...4.2.1)
    - overriding `onOptionsItemSelected()`
-
+- [Showing how to read values from SharedPreferences](https://github.com/auval/AndroidWorkshop/compare/4.2.1...4.2.2)
+  - And using AsyncHandler and UiHandler on the way
 
 #### print the content of the property file on the emulator
  `adb  -s emulator-5554 shell 'cat /data/data/org.shenkar.auval.codesamples/shared_prefs/org.shenkar.auval.codesamples_preferences.xml'`
