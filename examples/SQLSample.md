@@ -75,7 +75,7 @@ select * from favcol where username like 'L%';
 </b>
 
 create table colors ('clr' text, 'example' text) ;
-insert into colors (clr,example) values ('red','bloud'),('white','wall'),('yellow','sun'),('blue','sky'),('white','paper');
+insert into colors (clr,example) values ('red','blood'),('white','wall'),('yellow','sun'),('blue','sky'),('white','paper');
 select * from colors;
 <b>
     clr         example   
