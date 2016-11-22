@@ -131,3 +131,11 @@ Useful **git** commands:
   - Add  `onCreateOptionsMenu(Menu menu) {}` to the activity, to inflate menu items
 
 ---
+
+### Lesson 5
+
+[Slides](https://goo.gl/gVRMt2)
+
+
+
+---

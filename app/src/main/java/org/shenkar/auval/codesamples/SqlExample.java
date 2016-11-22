@@ -21,33 +21,33 @@ import java.util.ArrayList;
 
 
 public class SqlExample extends AppCompatActivity {
-    EditText nameEdit = null;
-    ArrayList<String> names = null;
-    TextView resultsTv;
-    Spinner spinner = null;
-    Runnable saver = new Runnable() {
+    EditText mNameEdit = null;
+    ArrayList<String> mNames = null;
+    TextView mResultsTv;
+    Spinner mSpinner = null;
+    Runnable mSaver = new Runnable() {
         @Override
         public void run() {
-            DbHelper.getDb(SqlExample.this).addRow(nameEdit.getText().toString(), spinner.getSelectedItem().toString());
-            loader.run(); // still user thread!
+            DbHelper.getDb(SqlExample.this).addRow(mNameEdit.getText().toString(), mSpinner.getSelectedItem().toString());
+            mLoader.run(); // still user thread!
         }
     };
-    Runnable uiSetter = new Runnable() {
+    Runnable mUiSetter = new Runnable() {
         @Override
         public void run() {
-            if (names == null || names.isEmpty()) {
-                resultsTv.setText("No results yet for " + spinner.getSelectedItem().toString() +
+            if (mNames == null || mNames.isEmpty()) {
+                mResultsTv.setText("No results yet for " + mSpinner.getSelectedItem().toString() +
                         ".\nPlease save something or select a different color!");
                 return;
             }
-            resultsTv.setText("results:\n" + names.toString());
+            mResultsTv.setText("results:\n" + mNames.toString());
         }
     };
-    Runnable loader = new Runnable() {
+    Runnable mLoader = new Runnable() {
         @Override
         public void run() {
-            names = DbHelper.getDb(SqlExample.this).whoLikesWhichColor(spinner.getSelectedItem().toString());
-            UiHandler.post(uiSetter);
+            mNames = DbHelper.getDb(SqlExample.this).whoLikesWhichColor(mSpinner.getSelectedItem().toString());
+            UiHandler.post(mUiSetter);
         }
     };
 
@@ -57,8 +57,8 @@ public class SqlExample extends AppCompatActivity {
         setContentView(R.layout.activity_sql_example);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        nameEdit = (EditText) findViewById(R.id.edit_name);
-        resultsTv = (TextView) findViewById(R.id.results_pane);
+        mNameEdit = (EditText) findViewById(R.id.edit_name);
+        mResultsTv = (TextView) findViewById(R.id.results_pane);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,14 +70,14 @@ public class SqlExample extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        spinner = (Spinner) findViewById(R.id.spinner_colors);
+        mSpinner = (Spinner) findViewById(R.id.spinner_colors);
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
 
 //                String color = adapterView.getItemAtPosition(position).toString();
-                AsyncHandler.post(loader);
+                AsyncHandler.post(mLoader);
             }
 
             @Override
@@ -90,7 +90,7 @@ public class SqlExample extends AppCompatActivity {
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AsyncHandler.post(saver);
+                AsyncHandler.post(mSaver);
             }
         });
     }
