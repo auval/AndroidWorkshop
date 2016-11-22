@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 new ArrayItem("Lecture 2: Activities communicate", Lesson2Activity.class),
                 new ArrayItem("Lecture 3: App Toolbar", ActionbarExampleActivity.class),
                 new ArrayItem("Lecture 4: SQlite", SqlExample.class),
+                new ArrayItem("Lecture 5: Scene Transition", SceneTransitionActivity.class),
         };
 
         // add the data to an adapter

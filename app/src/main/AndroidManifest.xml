@@ -36,6 +36,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.shenkar.auval.codesamples.MainActivity"/>
         </activity>
+        <activity android:name=".SceneTransitionActivity">
+        </activity>
     </application>
 
 </manifest>
