@@ -27,18 +27,27 @@ public class SceneTransitionActivity extends AppCompatActivity {
          */
         ViewGroup rootView = (ViewGroup) findViewById(android.R.id.content);
 
+        /**
+         * tell the scene about the alternative layouts
+         */
         mScene1 = Scene.getSceneForLayout(rootView, R.layout.activity_scene_1, getBaseContext());
         mScene2 = Scene.getSceneForLayout(rootView, R.layout.activity_scene_2, getBaseContext());
 
     }
 
     public void onGotoScene1(View view) {
-
+        /**
+         * "go" will cause:
+         * 1) inflate the new layout
+         * 2) calculate the layout
+         * 3) check for each view the differences between now and the next layout
+         * 4) create an animator
+         * 5) animate
+         */
         TransitionManager.go(mScene1);
     }
 
     public void onGotoScene2(View view) {
         TransitionManager.go(mScene2);
-
     }
 }
