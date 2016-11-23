@@ -8,8 +8,10 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * Official training:
- * https://developer.android.com/training/custom-views/custom-drawing.html
+ * This is an original code for animating rotating patterns.
+ * Given as a reference material for an Android course
+ *
+ * @author amir uval
  */
 public class MyBitmapAnimatedGraphicsView extends View {
 
@@ -21,6 +23,8 @@ public class MyBitmapAnimatedGraphicsView extends View {
     Paint paint;
     int width;
     private Bitmap bitmap;
+    private int mDotSpeed = 2000;
+    private int mRotationSpeed = 5000;
 
     public MyBitmapAnimatedGraphicsView(Context context) {
         super(context);
@@ -41,22 +45,25 @@ public class MyBitmapAnimatedGraphicsView extends View {
         paint = new Paint();
         paint.setAntiAlias(true); // smooth lines
         paint.setTextSize(24);
-        paint.setStrokeWidth(1);
+        paint.setStrokeWidth(1); // used only when when drawing line (Paint.Style.LINE)
         paint.setStyle(Paint.Style.FILL);
-
-
     }
 
+    /**
+     * drawing on an off-screen bitmaps allows us to keep the previous drawing visible.
+     *
+     * @param canvas   the one we created for the off-screen bitmap
+     * @param now      we want all drawing to be at sync with each other, using the same value
+     * @param rotation we already calculated that, passing the value is usually cheaper than re-calculating it
+     */
     protected void drawOffscreen(Canvas canvas, long now, float rotation) {
 
+        // note that you can use underscore ('_') inside int or long literals!
         paint.setColor(0xff_44_ff_44); // green
 
         int save = canvas.save();
 
-
         canvas.rotate(rotation * 360, width / 2, height / 2);
-
-//        canvas.drawLine(0, height / 2, width, height / 2, paint);
 
         float dotPlace = calcDotPlace(now);
 
@@ -66,7 +73,7 @@ public class MyBitmapAnimatedGraphicsView extends View {
 
         canvas.drawCircle(dotPlace * width, height / 2, 10, paint);
 
-        canvas.restoreToCount(save);
+        canvas.restoreToCount(save); // we should return the canvas the way we got it == good citizenship
 
 
     }
@@ -82,6 +89,9 @@ public class MyBitmapAnimatedGraphicsView extends View {
     }
 
     /**
+     * Note that onDraw need to draw the *entire* view every time it is called.
+     * previous draw is long forgotten. (about 16ms ago if we're efficient)
+     *
      * @param canvas the surface to draw to
      */
     @Override
@@ -126,11 +136,11 @@ public class MyBitmapAnimatedGraphicsView extends View {
      */
     private float calcDotPlace(long now) {
         // I want the dot to go in one direction for 2 seconds, and then 2 seconds the other way
-        int position = (int) (now % 4000);
-        if (position < 2000) {
-            return position / 2000f;
+        int position = (int) (now % (mDotSpeed + mDotSpeed));
+        if (position < mDotSpeed) {
+            return position / (mDotSpeed * 1f);
         }
-        return (4000 - position) / 2000f;
+        return (mDotSpeed + mDotSpeed - position) / (mDotSpeed * 1f);
     }
 
     /**
@@ -140,9 +150,13 @@ public class MyBitmapAnimatedGraphicsView extends View {
         // I want a full  sine cycle every 5 seconds
         // it will be a function of time
         // value 0..1
-        float position = (now % 5000) / 5000f; // 5000 milliseconds = 5 seconds
+        float position = (now % mRotationSpeed) / (mRotationSpeed * 1f); // 5000 milliseconds = 5 seconds
 
         return position;
     }
 
+    public void setAnimationParams(int rotationSpeed, int dotSpeed) {
+        this.mRotationSpeed = rotationSpeed;
+        this.mDotSpeed = dotSpeed;
+    }
 }

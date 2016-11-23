@@ -18,6 +18,8 @@ public class MyAnimatedGraphicsView extends View {
      */
     Paint paint;
     int width;
+    private int mDotSpeed = 2000;
+    private int mRotationSpeed = 5000;
 
     public MyAnimatedGraphicsView(Context context) {
         super(context);
@@ -69,6 +71,8 @@ public class MyAnimatedGraphicsView extends View {
         paint.setColor(0xff_dd_dd_dd); // light grey
 
         canvas.drawText("Low Level Animation", 10, 50, paint);
+        canvas.drawText("Time for Cycle = " + mRotationSpeed, 10, 80, paint);
+        canvas.drawText("Dot speed = " + mDotSpeed, 10, 110, paint);
 
         postInvalidateOnAnimation();
     }
@@ -87,11 +91,11 @@ public class MyAnimatedGraphicsView extends View {
      */
     private float calcDotPlace(long now) {
         // I want the dot to go in one direction for 2 seconds, and then 2 seconds the other way
-        int position = (int) (now % 4000);
-        if (position < 2000) {
-            return position / 2000f;
+        int position = (int) (now % (mDotSpeed + mDotSpeed));
+        if (position < mDotSpeed) {
+            return position / (mDotSpeed * 1f);
         }
-        return (4000 - position) / 2000f;
+        return (mDotSpeed + mDotSpeed - position) / (mDotSpeed * 1f);
     }
 
     /**
@@ -101,9 +105,15 @@ public class MyAnimatedGraphicsView extends View {
         // I want a full  sine cycle every 5 seconds
         // it will be a function of time
         // value 0..1
-        float position = (now % 5000) / 5000f; // 5000 milliseconds = 5 seconds
+        float position = (now % mRotationSpeed) / (mRotationSpeed * 1f); // 5000 milliseconds = 5 seconds
 
         return position;
+    }
+
+    public void setAnimationParams(int rotationSpeed, int dotSpeed) {
+
+        this.mRotationSpeed = rotationSpeed;
+        this.mDotSpeed = dotSpeed;
     }
 
 }
