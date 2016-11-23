@@ -107,7 +107,7 @@ Useful **git** commands:
  `adb  -s emulator-5554 shell 'cat /data/data/org.shenkar.auval.codesamples/shared_prefs/org.shenkar.auval.codesamples_preferences.xml'`
 
 
-#### [Playing with SQL](examples/SQLSample.md)
+#### [Playing with raw SQL](examples/SQLSample.md)
 
 #### Tips
 
@@ -136,6 +136,9 @@ Useful **git** commands:
 
 [Slides](https://goo.gl/gVRMt2)
 
-
+- Scene transition
+    - example: [SceneTransitionActivity](https://github.com/auval/AndroidWorkshop/blob/master/app/src/main/java/org/shenkar/auval/codesamples/SceneTransitionActivity.java)
+    - [diff](https://github.com/auval/AndroidWorkshop/compare/5...5.1)
+    - 
 
 ---
