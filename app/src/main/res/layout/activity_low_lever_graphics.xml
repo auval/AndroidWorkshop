@@ -29,7 +29,7 @@
     <org.shenkar.auval.codesamples.MyAnimatedGraphicsView
         android:id="@+id/animated_graphics"
         android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginLeft="16dp"
@@ -45,7 +45,7 @@
     <org.shenkar.auval.codesamples.MyBitmapAnimatedGraphicsView
         android:id="@+id/animated_graphics_buffer"
         android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_height="240dp"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginLeft="16dp"

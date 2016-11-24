@@ -67,11 +67,13 @@ public class MyBitmapAnimatedGraphicsView extends View {
 
         float dotPlace = calcDotPlace(now);
 
-        canvas.drawCircle(dotPlace * width, height / 2, 12, paint);
+        // notice the circle has a radius of 12
+        canvas.drawCircle(dotPlace * (width - 24) + 12, height / 2, 12, paint);
 
         paint.setColor(0xff_22_dd_22); // darker green
 
-        canvas.drawCircle(dotPlace * width, height / 2, 10, paint);
+        // the fill is centered inside the 12 radius circle
+        canvas.drawCircle(dotPlace * (width - 24) + 12, height / 2, 10, paint);
 
         canvas.restoreToCount(save); // we should return the canvas the way we got it == good citizenship
 
@@ -86,6 +88,10 @@ public class MyBitmapAnimatedGraphicsView extends View {
         offScreenCanvas = new Canvas();
         bitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
         offScreenCanvas.setBitmap(bitmap);
+
+        height = h;// getHeight();
+        width = w;// getWidth();
+
     }
 
     /**
@@ -98,12 +104,13 @@ public class MyBitmapAnimatedGraphicsView extends View {
     protected void onDraw(Canvas canvas) {
         long now = System.currentTimeMillis();
         float rotation = calcMovement(now);
+        int save = canvas.save();
+//        canvas.scaleToFitInView(0.9f, 0.9f, width / 2, height / 2);
 
         drawOffscreen(offScreenCanvas, now, rotation);
 
         canvas.drawBitmap(bitmap, 0, 0, null);
 
-        int save = canvas.save();
 
         canvas.rotate(rotation * 360, width / 2, height / 2);
 
@@ -121,15 +128,21 @@ public class MyBitmapAnimatedGraphicsView extends View {
 
     }
 
-    @Override
-    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        super.onLayout(changed, left, top, right, bottom);
-
-        height = getHeight();
-        width = getWidth();
-
-
-    }
+//    /**
+//     * force the view to be square. works, but I don't need it eventually.
+//     * @param widthMeasureSpec
+//     * @param heightMeasureSpec
+//     */
+//    @Override
+//    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+//        int originalWidth = MeasureSpec.getSize(widthMeasureSpec);
+//
+//        int minDimension = Math.min(originalWidth, MeasureSpec.getSize(heightMeasureSpec));
+//
+//        super.onMeasure(
+//                MeasureSpec.makeMeasureSpec(minDimension, MeasureSpec.EXACTLY),
+//                MeasureSpec.makeMeasureSpec(minDimension, MeasureSpec.EXACTLY));
+//    }
 
     /**
      * I want the red dot to go from one end of the line (0) to the other (w) and back during one cycle
@@ -159,4 +172,5 @@ public class MyBitmapAnimatedGraphicsView extends View {
         this.mRotationSpeed = rotationSpeed;
         this.mDotSpeed = dotSpeed;
     }
+
 }

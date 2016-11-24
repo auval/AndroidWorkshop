@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.1"
     defaultConfig {
         applicationId "org.shenkar.auval.codesamples"
         minSdkVersion 16
@@ -33,6 +33,11 @@ dependencies {
     compile 'com.android.support:design:25.0.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
     compile 'com.android.support:support-v4:25.0.1'
+    /**
+     * SVG support
+     */
     compile 'com.android.support:support-vector-drawable:25.0.1'
     testCompile 'junit:junit:4.12'
+
+
 }

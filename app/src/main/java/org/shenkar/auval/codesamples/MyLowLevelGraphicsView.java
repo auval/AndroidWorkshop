@@ -40,11 +40,6 @@ public class MyLowLevelGraphicsView extends View {
         paint.setTextSize(24);
     }
 
-    @Override
-    public void draw(Canvas canvas) {
-        super.draw(canvas);
-    }
-
     /**
      *
      * @param canvas the surface to draw to

@@ -40,6 +40,8 @@
         </activity>
         <activity android:name=".LowLeverGraphicsActivity">
         </activity>
+        <activity android:name=".BmpAndSvgActivity">
+        </activity>
     </application>
 
 </manifest>

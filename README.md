@@ -4,10 +4,11 @@ Android Development Workshop
 [Amir Uval](shenkar@mindtheapps.com)
 
 
-## Quick references
+## Useful links
+- [Android Developers YouTube Channel](https://www.youtube.com/user/androiddevelopers)
+- [DebBites short videos](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc_XOgcRukSoKKjewFJZrKV0)
 - [Markdown](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
   The syntax used for this README.md file
-
 
 ## Workshop Lessons
 
@@ -135,6 +136,9 @@ Useful **git** commands:
 ### Lesson 5
 
 [Slides](https://goo.gl/gVRMt2)
+
+- [Settings walkthrough](https://docs.google.com/document/d/1PVNrj7HtfjqAsHtnUnfLOSoTKthzemtfpbvQ-3CBE4U/edit?usp=sharing)
+  Every student implements on his/her pc during class.
 
 - Scene transition
     - example: [SceneTransitionActivity](https://github.com/auval/AndroidWorkshop/blob/master/app/src/main/java/org/shenkar/auval/codesamples/SceneTransitionActivity.java)
