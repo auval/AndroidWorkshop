@@ -143,6 +143,11 @@ Useful **git** commands:
 - Scene transition
     - example: [SceneTransitionActivity](https://github.com/auval/AndroidWorkshop/blob/master/app/src/main/java/org/shenkar/auval/codesamples/SceneTransitionActivity.java)
     - [diff](https://github.com/auval/AndroidWorkshop/compare/5...5.1)
-    - 
+
+---
+
+### Lesson 6
+
+- Low level graphics and animation
 
 ---
