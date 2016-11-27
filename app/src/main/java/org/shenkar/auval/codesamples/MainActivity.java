@@ -53,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
                 new ArrayItem("Lecture 3: App Toolbar", ActionbarExampleActivity.class),
                 new ArrayItem("Lecture 4: SQlite", SqlExample.class),
                 new ArrayItem("Lecture 5: Scene Transition", SceneTransitionActivity.class),
-            //    new ArrayItem("Lecture 6a: Low Lever Graphics", LowLeverGraphicsActivity.class),
-            //    new ArrayItem("Lecture 6b: SVG", BmpAndSvgActivity.class),
+                //    new ArrayItem("Lecture 6a: Low Lever Graphics", LowLeverGraphicsActivity.class),
+                //    new ArrayItem("Lecture 6b: SVG", BmpAndSvgActivity.class),
         };
 
         // add the data to an adapter
@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Intent intent = new Intent(getBaseContext(), clicked.activity);
                     startActivity(intent);
+                    overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 }
             }
         });
