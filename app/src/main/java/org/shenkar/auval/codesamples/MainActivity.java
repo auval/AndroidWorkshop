@@ -52,9 +52,9 @@ public class MainActivity extends AppCompatActivity {
                 new ArrayItem("Lecture 2: Activities communicate", Lesson2Activity.class),
                 new ArrayItem("Lecture 3: App Toolbar", ActionbarExampleActivity.class),
                 new ArrayItem("Lecture 4: SQlite", SqlExample.class),
-                new ArrayItem("Lecture 5a: Scene Transition", SceneTransitionActivity.class),
-                new ArrayItem("Lecture 5b: Low Lever Graphics", LowLeverGraphicsActivity.class),
-                new ArrayItem("Lecture 5c: SVG", BmpAndSvgActivity.class),
+                new ArrayItem("Lecture 5: Scene Transition", SceneTransitionActivity.class),
+            //    new ArrayItem("Lecture 6a: Low Lever Graphics", LowLeverGraphicsActivity.class),
+            //    new ArrayItem("Lecture 6b: SVG", BmpAndSvgActivity.class),
         };
 
         // add the data to an adapter
