@@ -14,8 +14,7 @@ import android.view.ViewGroup;
  * @author amir uval
  */
 public class SceneTransitionActivity extends AppCompatActivity {
-    Scene mScene1;
-    Scene mScene2;
+    ViewGroup rootView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +24,7 @@ public class SceneTransitionActivity extends AppCompatActivity {
         /**
          * This is how to get a reference to the root view
          */
-        ViewGroup rootView = (ViewGroup) findViewById(android.R.id.content);
-
-        /**
-         * tell the scene about the alternative layouts
-         */
-        mScene1 = Scene.getSceneForLayout(rootView, R.layout.activity_scene_1, getBaseContext());
-        mScene2 = Scene.getSceneForLayout(rootView, R.layout.activity_scene_2, getBaseContext());
+        rootView = (ViewGroup) findViewById(android.R.id.content);
 
     }
 
@@ -44,10 +37,12 @@ public class SceneTransitionActivity extends AppCompatActivity {
          * 4) create an animator
          * 5) animate
          */
+        Scene mScene1 = Scene.getSceneForLayout(rootView, R.layout.activity_scene_1, getBaseContext());
         TransitionManager.go(mScene1);
     }
 
     public void onGotoScene2(View view) {
+        Scene mScene2 = Scene.getSceneForLayout(rootView, R.layout.activity_scene_2, getBaseContext());
         TransitionManager.go(mScene2);
     }
 }
