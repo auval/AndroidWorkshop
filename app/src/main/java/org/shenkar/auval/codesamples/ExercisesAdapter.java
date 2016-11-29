@@ -9,6 +9,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
+ * Controller: An object instance of this class holds references both to the Model and to the View.
+ * Having reference to View means it must born and die with the Activity.
+ * It can keep references to Views as instance variables, but never as static references.
+ * <p>
  * Reference training:
  * https://developer.android.com/training/material/lists-cards.html
  * <p>
@@ -32,20 +36,42 @@ public class ExercisesAdapter extends RecyclerView.Adapter<ExercisesAdapter.MyVi
         setHasStableIds(true);
     }
 
-    // Create new views (invoked by the layout manager)
+    /**
+     * Creates new views (invoked by the layout manager)
+     * The parent will take care of recycling as needed according to the viewType, so no need to
+     * worry about it.
+     * The method will be called once per item on the screen, and not once per item in the list.
+     * I.e. an item off the screen will automatically be recycled and used for one entering the
+     * screen. Hence the name of the class (RecyclerList).
+     *
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent,
-                                           int viewType) {
-        // create a new view
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+        // note: we can switch by the viewType, inflate or create a different View accordingly.
+
+        // We create a new TextView for this simple example.
+        // But it can be a ViewGroup with multiple Views instead.
+
         TextView v = (TextView) LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.my_text_view, parent, false);
-        // set the view's size, margins, paddings and layout parameters
 
         MyViewHolder vh = new MyViewHolder(v);
         return vh;
     }
 
-    // Replace the contents of a view (invoked by the layout manager)
+
+    /**
+     * Replaces the contents of a view (invoked by the layout manager)
+     * <p>
+     * Here we are given the correct view for the position, inside the holder.
+     *
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         // - get element from your dataset at this position
@@ -68,20 +94,24 @@ public class ExercisesAdapter extends RecyclerView.Adapter<ExercisesAdapter.MyVi
         return mDataset.size();
     }
 
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder
+    /**
+     * Provides a reference to the views for each data item
+     * Complex data items may need more than one view per item, and
+     * you provide access to all the views for a data item in a view holder.
+     *
+     * In this example we supply only TextView
+     * But we can hold any view type, or alternative view types if there are more than one row
+     * type. (E.g. a title row and a data row)
+     *
+     */
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public TextView mTextView;
         // will assign a click listener to it
-//        private ViewGroup vg;
 
         public MyViewHolder(TextView v) {
             super(v);
             mTextView = v;
-//            mTextView = (TextView) v.findViewById(R.id.row_text);
-//            vg = v;
         }
     }
 }

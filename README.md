@@ -148,6 +148,11 @@ Useful **git** commands:
 
 ### Lesson 6
 
+- RecycleView (few words only + reference to code)
+    - [Official Training]()
+    - [Replacing ListView with RecycleView Diff](https://github.com/auval/AndroidWorkshop/compare/6...6.1)
 - Low level graphics and animation
+
+
 
 ---
