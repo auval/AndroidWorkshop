@@ -39,5 +39,9 @@ dependencies {
     compile 'com.android.support:support-vector-drawable:25.0.1'
     testCompile 'junit:junit:4.12'
 
+    /**
+     * evolution of ListView
+     */
+    compile 'com.android.support:recyclerview-v7:25.0.1'
 
 }
