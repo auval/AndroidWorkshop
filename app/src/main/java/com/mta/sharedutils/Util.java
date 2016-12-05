@@ -16,9 +16,11 @@
 
 package com.mta.sharedutils;
 
+import android.content.Context;
 import android.os.Looper;
 import android.support.annotation.IntDef;
 import android.util.Log;
+import android.util.TypedValue;
 
 import org.shenkar.auval.codesamples.BuildConfig;
 
@@ -144,4 +146,16 @@ To enable it, set this value in this class statically to true, and in runtime se
         return exception;
     }
 
+    /**
+     * Convert device independent pixel (dp) dimension to px, according to screen pixel density.
+     * If you need this conversion a lot, it's best to calculate this once for 1 dp
+     * and put the result in a static variable for a more efficient use later.
+     *
+     * @param context
+     * @param dp
+     * @return
+     */
+    public static float dpToPx(Context context, int dp) {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.getResources().getDisplayMetrics());
+    }
 }
