@@ -36,12 +36,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.shenkar.auval.codesamples.MainActivity"/>
         </activity>
-        <activity android:name=".SceneTransitionActivity">
-        </activity>
-        <activity android:name=".LowLeverGraphicsActivity">
-        </activity>
-        <activity android:name=".BmpAndSvgActivity">
-        </activity>
+        <activity android:name=".SceneTransitionActivity"/>
+        <activity android:name=".LowLeverGraphicsActivity"/>
+        <activity android:name=".BmpAndSvgActivity"/>
     </application>
 
 </manifest>
