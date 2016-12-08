@@ -18,6 +18,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    // a helper to find all views and generate references to them.
+    // I demonstrate how to use it in SceneTransitionActivity.java
+    // see: https://developer.android.com/topic/libraries/data-binding/index.html
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 dependencies {
