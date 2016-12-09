@@ -39,6 +39,8 @@
         <activity android:name=".SceneTransitionActivity"/>
         <activity android:name=".LowLeverGraphicsActivity"/>
         <activity android:name=".BmpAndSvgActivity"/>
+        <activity android:name=".SpriteAnimation">
+        </activity>
     </application>
 
 </manifest>

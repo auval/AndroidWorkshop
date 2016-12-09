@@ -148,6 +148,8 @@ Useful **git** commands:
 
 ### Lesson 6
 
+    RecyclerView, Scene Transitions, Low Level Graphics
+
 [Slides](https://goo.gl/hY7ALc)
 
 - RecycleView (few words only + reference to code)
@@ -155,7 +157,12 @@ Useful **git** commands:
     - [Replacing ListView with RecycleView Diff](https://github.com/auval/AndroidWorkshop/compare/6...6.1)
 - Low level graphics and animation
 
-- [A lesson on Resources by Chaim Michael](https://youtu.be/SCLs7jyGs9k)
+- [A lesson on Resources by Chaim Michael (with his permission)](https://youtu.be/SCLs7jyGs9k)
+
+### Lesson 7
+
+     Custom View Animation
+
 
 
 ---
