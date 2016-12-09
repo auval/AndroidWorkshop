@@ -75,7 +75,7 @@ public class MyLowLevelSvgView extends View {
         moonPath = PathParser.createPathFromPathData(moon);
 
         setLayerType(LAYER_TYPE_SOFTWARE, paint);
-        //  comment: don't setLayerType(LAYER_TYPE_HARDWARE,paint);
+        //  comment: don't setLayerType(LAYER_TYPE_HARDWARE,topRectPaint);
         //  this view looks bad on some targets with hardware acceleration on.
 
     }
