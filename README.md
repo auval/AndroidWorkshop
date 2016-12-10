@@ -169,19 +169,19 @@ Useful **git** commands:
 
 Lots of examples:
 
-1. Animated view (rotating dot): [MyAnimatedGraphicsView](/src/main/java/org/shenkar/auval/codesamples/MyAnimatedGraphicsView.java)
+1. Animated view (rotating dot): [MyAnimatedGraphicsView](app/src/main/java/org/shenkar/auval/codesamples/MyAnimatedGraphicsView.java)
     - This view draws directly on the screen buffer, which clears every frame.
     - <img src="/examples/7a_llanim.png" width="144">
-2. Animated view (rotating dot on offscreen Bitmap): [MyBitmapAnimatedGraphicsView](/src/main/java/org/shenkar/auval/codesamples/MyBitmapAnimatedGraphicsView.java)
+2. Animated view (rotating dot on offscreen Bitmap): [MyBitmapAnimatedGraphicsView](app/src/main/java/org/shenkar/auval/codesamples/MyBitmapAnimatedGraphicsView.java)
     - This view draws on an offscreen Bitmap I created, so on each draw I add just one dot, and 
     the bitmaps keeps all the past drawings.
     - It calculates dot position as a function of time, so the movement is independent 
     neither of the speed of the phone nor hiccups of the UI thread. 
     - <img src="/examples/7a_llanim_wbmp.png" width="144">
-3. [SpriteAnimationActivity](/src/main/java/org/shenkar/auval/codesamples/SpriteAnimationActivity.java)
+3. [SpriteAnimationActivity](app/src/main/java/org/shenkar/auval/codesamples/SpriteAnimationActivity.java)
       just puts a custom ViewGroup on the screen.
     - Notice that instead of ConstraintsLayout as root in the xml I use 
-    [SpriteAnimationView](/src/main/res/layout/activity_sprite_animation.xml)
+    [SpriteAnimationView](app/src/main/res/layout/activity_sprite_animation.xml)
      custom ViewGroup.
     - The animation happens here, in [SpriteAnimationView](https://github
     .com/auval/AndroidWorkshop/blob/master/app/src/main/java/org/shenkar/auval/codesamples/SpriteAnimationView.java)
