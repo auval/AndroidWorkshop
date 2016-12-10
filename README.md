@@ -159,12 +159,48 @@ Useful **git** commands:
 
 - [A lesson on Resources by Chaim Michael (with his permission)](https://youtu.be/SCLs7jyGs9k)
 
+---
+
 ### Lesson 7
 
      Custom View Animation
 
 [Slides](https://goo.gl/adGjJf)
 
+Lots of examples:
 
-
+1. Animated view (rotating dot): [MyAnimatedGraphicsView](https://github
+.com/auval/AndroidWorkshop/blob/master/app/src/main/java/org/shenkar/auval/codesamples/MyAnimatedGraphicsView.java)
+    - This view draws directly on the screen buffer, which clears every frame.
+    - <img src="/examples/7a_llanim.png" width="72">
+2. Animated view (rotating dot on offscreen Bitmap): [MyBitmapAnimatedGraphicsView](https://github
+.com/auval/AndroidWorkshop/blob/master/app/src/main/java/org/shenkar/auval/codesamples/MyBitmapAnimatedGraphicsView.java)
+    - This view draws on an offscreen Bitmap I created, so on each draw I add just one dot, and 
+    the bitmaps keeps all the past drawings.
+    - It calculates dot position as a function of time, so the movement is independent 
+    neither of the speed of the phone nor hiccups of the UI thread. 
+    - <img src="/examples/7a_llanim_wbmp.png" width="72">
+3. [SpriteAnimationActivity](https://github
+.com/auval/AndroidWorkshop/blob/master/app/src/main/java/org/shenkar/auval/codesamples/SpriteAnimationActivity.java)
+      just puts a custom ViewGroup on the screen.
+    - Notice that instead of ConstraintsLayout as root in the xml I use [SpriteAnimationView]
+    (https://github .com/auval/AndroidWorkshop/blob/master/app/src/main/res/layout/activity_sprite_animation.xml)
+     custom ViewGroup.
+    - The animation happens here, in [SpriteAnimationView](https://github
+    .com/auval/AndroidWorkshop/blob/master/app/src/main/java/org/shenkar/auval/codesamples/SpriteAnimationView.java)
+    - <img src="/examples/7b_llsa.png" width="72">
+4. [SvgViewsActivity](https://github.com/auval/AndroidWorkshop/blob/master/app/src/main/java/org
+/shenkar/auval/codesamples/SvgViewsActivity.java) demonstrates using SVG as a background image, 
+and 4 svgs as frames for [animation-list](app/src/main/res/drawable/butterfly.xml) drawable.
+    - The drawable is set as src of ImageView, and started from the Activity.
+    - When touching a butterfly, it will fly elsewhere, using Scene Transition.
+     This may be a useful reference for building your own game.
+    - Notice that this activity has fixed orientation set in [AndroidManifest.xml]().
+    - <img src="/examples/7c_al_svg.png" width="144">
+5. [BmpAndSvgActivity](https://github.com/auval/AndroidWorkshop/blob/master/app/src/main/java/org
+/shenkar/auval/codesamples/BmpAndSvgActivity.java) is not animated. It demonstrates combining 
+simple Bitmap as a background and an SVG as a simple background drawable of a view.
+    - Notice that the svg doesn't lose quality when scaled up or down.
+    - <img src="/examples/7d_svg_and_bmp.png" width="144">
+     
 ---
