@@ -53,8 +53,10 @@ public class MainActivity extends AppCompatActivity {
                 "com.mindtheapps.sampleprefs"));
         mValues.add(new ArrayItem("Lecture 6a: Scene Transition", SceneTransitionActivity.class));
         mValues.add(new ArrayItem("Lecture 6b: Low Lever Graphics", LowLeverGraphicsActivity.class));
-        mValues.add(new ArrayItem("Lecture 7a: Sprite Animation", SpriteAnimation.class));
-        mValues.add(new ArrayItem("Lecture 7b: SVG", BmpAndSvgActivity.class));
+        mValues.add(new ArrayItem("Lecture 7a: Low Level Sprite Animation", SpriteAnimationActivity.class));
+        mValues.add(new ArrayItem("Lecture 7b: Low Level Sprite Animation", SvgViewsActivity
+                .class));
+        mValues.add(new ArrayItem("Lecture 7c: SVG", BmpAndSvgActivity.class));
 
     }
 
