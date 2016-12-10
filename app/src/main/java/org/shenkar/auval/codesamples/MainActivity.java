@@ -51,12 +51,14 @@ public class MainActivity extends AppCompatActivity {
         mValues.add(new ArrayItem("Lecture 5: Settings Sample", SettingsActivity.class));
         mValues.add(new ArrayItem(".. Run the basic Settings app (if it's installed)",
                 "com.mindtheapps.sampleprefs"));
-        mValues.add(new ArrayItem("Lecture 6a: Scene Transition", SceneTransitionActivity.class));
-        mValues.add(new ArrayItem("Lecture 6b: Low Lever Graphics", LowLeverGraphicsActivity.class));
-        mValues.add(new ArrayItem("Lecture 7a: Low Level Sprite Animation", SpriteAnimationActivity.class));
-        mValues.add(new ArrayItem("Lecture 7b: Animation List (with SVG)", SvgViewsActivity
+        mValues.add(new ArrayItem("Lecture 6: Scene Transition", SceneTransitionActivity.class));
+        mValues.add(new ArrayItem("Lecture 7a: Low Lever Graphics", LowLeverGraphicsActivity
                 .class));
-        mValues.add(new ArrayItem("Lecture 7c: SVG", BmpAndSvgActivity.class));
+        mValues.add(new ArrayItem("Lecture 7b: Low Level Sprite Animation",
+                SpriteAnimationActivity.class));
+        mValues.add(new ArrayItem("Lecture 7c: Animation List (with SVG)", SvgViewsActivity
+                .class));
+        mValues.add(new ArrayItem("Lecture 7d: SVG on Bitmap background", BmpAndSvgActivity.class));
 
     }
 
