@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <org.shenkar.auval.codesamples.SpriteAnimationView
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_sprite_animation"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="org.shenkar.auval.codesamples.SpriteAnimationActivity">
-
 
     <Button
         android:id="@+id/button"
@@ -15,8 +14,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/button_bg"
         android:onClick="onBlockButtonClicked"
+        android:paddingEnd="4dp"
+        android:paddingStart="4dp"
         android:text="Block the UI thread"
+        android:textColor="#fff"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="19dp"/>
+        app:layout_constraintTop_toTopOf="parent"/>
 </org.shenkar.auval.codesamples.SpriteAnimationView>
