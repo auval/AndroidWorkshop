@@ -180,16 +180,14 @@ Lots of examples:
     - <img src="/examples/7a_llanim_wbmp.png" width="144">
 3. [SpriteAnimationActivity](app/src/main/java/org/shenkar/auval/codesamples/SpriteAnimationActivity.java)
       just puts a custom ViewGroup on the screen.
-    - Notice that instead of ConstraintsLayout as root in the xml I use 
-    [SpriteAnimationView](app/src/main/res/layout/activity_sprite_animation.xml)
+    - Notice that instead of ConstraintsLayout as root in [the xml](app/src/main/res/layout/activity_sprite_animation.xml) I use SpriteAnimationView.
      custom ViewGroup.
-    - The animation happens here, in [SpriteAnimationView](https://github
-    .com/auval/AndroidWorkshop/blob/master/app/src/main/java/org/shenkar/auval/codesamples/SpriteAnimationView.java)
+    - The animation happens in [SpriteAnimationView](app/src/main/java/org/shenkar/auval/codesamples/SpriteAnimationView.java)
     - <img src="/examples/7b_llsa.png" width="144">
 4. [SvgViewsActivity](app/src/main/java/org/shenkar/auval/codesamples/SvgViewsActivity.java) demonstrates using SVG as a background image, 
 and 4 svgs as frames for [animation-list](app/src/main/res/drawable/butterfly.xml) drawable.
-    - The drawable is set as src of ImageView, and [started]() from the Activity.
-    - When touching a butterfly, it will fly elsewhere, using Scene Transition.
+    - The drawable is set as src of ImageView, and [started](app/src/main/java/org/shenkar/auval/codesamples/SvgViewsActivity.java#L35) from the Activity.
+    - When touching a butterfly, it will fly elsewhere, using [Scene Transition](app/src/main/java/org/shenkar/auval/codesamples/SvgViewsActivity.java#L60).
      This may be a useful reference for building your own game.
     - Notice that this activity has fixed orientation set in 
     [AndroidManifest.xml](app/src/main/AndroidManifest.xml#L45).
