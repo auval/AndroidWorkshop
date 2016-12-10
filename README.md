@@ -141,7 +141,7 @@ Useful **git** commands:
   Every student implements on his/her pc during class.
 
 - Scene transition
-    - example: [SceneTransitionActivity](/app/src/main/java/org/shenkar/auval/codesamples/SceneTransitionActivity.java)
+    - example: [SceneTransitionActivity](app/src/main/java/org/shenkar/auval/codesamples/SceneTransitionActivity.java)
     - [diff](https://github.com/auval/AndroidWorkshop/compare/5...5.1)
 
 ---
@@ -186,19 +186,19 @@ Lots of examples:
     - The animation happens here, in [SpriteAnimationView](https://github
     .com/auval/AndroidWorkshop/blob/master/app/src/main/java/org/shenkar/auval/codesamples/SpriteAnimationView.java)
     - <img src="/examples/7b_llsa.png" width="144">
-4. [SvgViewsActivity](/app/src/main/java/org/shenkar/auval/codesamples/SvgViewsActivity.java) demonstrates using SVG as a background image, 
-and 4 svgs as frames for [animation-list](/app/src/main/res/drawable/butterfly.xml) drawable.
+4. [SvgViewsActivity](app/src/main/java/org/shenkar/auval/codesamples/SvgViewsActivity.java) demonstrates using SVG as a background image, 
+and 4 svgs as frames for [animation-list](app/src/main/res/drawable/butterfly.xml) drawable.
     - The drawable is set as src of ImageView, and [started]() from the Activity.
     - When touching a butterfly, it will fly elsewhere, using Scene Transition.
      This may be a useful reference for building your own game.
     - Notice that this activity has fixed orientation set in 
-    [AndroidManifest.xml](/app/src/main/AndroidManifest.xml#L45).
+    [AndroidManifest.xml](app/src/main/AndroidManifest.xml#L45).
     - <img src="/examples/7c_al_svg.png" height="144">
-5. [BmpAndSvgActivity](/app/src/main/java/org/shenkar/auval/codesamples/BmpAndSvgActivity.java) is not animated. It demonstrates combining 
+5. [BmpAndSvgActivity](app/src/main/java/org/shenkar/auval/codesamples/BmpAndSvgActivity.java) is not animated. It demonstrates combining 
 simple Bitmap as a background and an SVG as a simple background drawable of a view.
     - Notice how the svg doesn't lose quality when scaled up or down.
     - On the upper right corner there's a cool (but complex) hack: I took the SVG parsing code 
-    from the support library, and [here](/app/src/main/java/org/shenkar/auval/codesamples/MyLowLevelSvgView.java#L75) I demonstrate how I turned a raw SVG to a Path object that
+    from the support library, and [here](app/src/main/java/org/shenkar/auval/codesamples/MyLowLevelSvgView.java#L75) I demonstrate how I turned a raw SVG to a Path object that
      Canvas can draw directly. 
     - <img src="/examples/7d_svg_and_bmp.png" width="144">
      
