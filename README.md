@@ -6,7 +6,7 @@ Android Development Workshop
 
 ## Useful links
 - [Android Developers YouTube Channel](https://www.youtube.com/user/androiddevelopers)
-- [DebBites short videos](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc_XOgcRukSoKKjewFJZrKV0)
+- [DevBites short videos](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc_XOgcRukSoKKjewFJZrKV0)
 - [Markdown](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
   The syntax used for this README.md file
 
@@ -180,29 +180,40 @@ Lots of examples:
     - <img src="/examples/7a_llanim_wbmp.png" width="144">
 3. [SpriteAnimationActivity](app/src/main/java/org/shenkar/auval/codesamples/SpriteAnimationActivity.java)
       just puts a custom ViewGroup on the screen.
-    - Notice that instead of ConstraintsLayout as root in [the xml](app/src/main/res/layout/activity_sprite_animation.xml) I use SpriteAnimationView.
+    - Notice that instead of ConstraintsLayout as root in 
+    [the xml](app/src/main/res/layout/activity_sprite_animation.xml) I use SpriteAnimationView.
      custom ViewGroup.
     - The animation happens in [SpriteAnimationView](app/src/main/java/org/shenkar/auval/codesamples/SpriteAnimationView.java)
     - <img src="/examples/7b_llsa.png" width="144">
 4. [SvgViewsActivity](app/src/main/java/org/shenkar/auval/codesamples/SvgViewsActivity.java) demonstrates using SVG as a background image, 
 and 4 svgs as frames for [animation-list](app/src/main/res/drawable/butterfly.xml) drawable.
-    - The drawable is set as src of ImageView, and [started](app/src/main/java/org/shenkar/auval/codesamples/SvgViewsActivity.java#L35) from the Activity.
-    - When touching a butterfly, it will fly elsewhere, using [Scene Transition](app/src/main/java/org/shenkar/auval/codesamples/SvgViewsActivity.java#L60).
+    - The drawable is set as src of ImageView, and 
+    [started](app/src/main/java/org/shenkar/auval/codesamples/SvgViewsActivity.java#L35) from the Activity.
+    - When touching a butterfly, it will fly elsewhere, using 
+    [Scene Transition](app/src/main/java/org/shenkar/auval/codesamples/SvgViewsActivity.java#L60).
      This may be a useful reference for building your own game.
     - Notice that this activity has fixed orientation set in 
     [AndroidManifest.xml](app/src/main/AndroidManifest.xml#L45).
     - <img src="/examples/7c_al_svg.png" height="144">
 5. [BmpAndSvgActivity](app/src/main/java/org/shenkar/auval/codesamples/BmpAndSvgActivity.java) is not animated. It demonstrates combining 
-simple Bitmap as a background and an SVG as a simple background drawable of a view.
+simple Bitmap as a [background](src/main/res/layout/activity_bmp_and_svg.xml#L8) and an SVG as a 
+[srcCompat](src/main/res/layout/activity_bmp_and_svg.xml#L15) drawable of a view.
     - Notice how the svg doesn't lose quality when scaled up or down.
     - On the upper right corner there's a cool (but complex) hack: I took the SVG parsing code 
     from the support library, and [here](app/src/main/java/org/shenkar/auval/codesamples/MyLowLevelSvgView.java#L75) I demonstrate how I turned a raw SVG to a Path object that
      Canvas can draw directly. 
     - <img src="/examples/7d_svg_and_bmp.png" width="144">
      
+      
+**Note regarding working on the project**: 
+You should [learn](http://nvie.com/posts/a-successful-git-branching-model/) this method on how to 
+collaborate using GitHub. Both students must contribute.
+
 ---
 
-
+####Download
+[lesson 7 apk](examples/7.apk)     
+    
 
 ####All the lessons slides
 - Lesson #1: https://goo.gl/j8laap
