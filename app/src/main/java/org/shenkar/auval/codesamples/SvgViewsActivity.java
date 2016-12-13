@@ -1,43 +1,84 @@
 package org.shenkar.auval.codesamples;
 
-import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
+import android.support.graphics.drawable.AnimatedVectorDrawableCompat;
 import android.support.transition.ChangeBounds;
 import android.support.transition.Transition;
 import android.support.transition.TransitionManager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatImageView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
-import android.widget.ImageView;
 
 import java.util.Random;
 
-
-public class SvgViewsActivity extends AppCompatActivity {
+public class SvgViewsActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_svg_views);
 
+
+//        ConstraintLayout contentView = (ConstraintLayout) findViewById(R.id.activity_svg_views);
+//        addButterflyCompat(contentView);
+
         // start animating the butterflies!
-        animateButterfly(R.id.butterfly1);
-        animateButterfly(R.id.butterfly2);
+        animateButterfly(R.id.butterfly_1);
+        animateButterfly(R.id.butterfly_2);
     }
+
+//    private void addButterflyCompat(ConstraintLayout contentView) {
+//
+//        android.support.v7.widget.AppCompatImageView iv = new android.support.v7.widget
+//                .AppCompatImageView(this);
+//        ConstraintLayout.LayoutParams newParams = new ConstraintLayout.LayoutParams(50,50);
+////                ConstraintLayout.LayoutParams.WRAP_CONTENT,
+////                ConstraintLayout.LayoutParams.WRAP_CONTENT);
+//        newParams.leftMargin = 50;
+//        newParams.topMargin = 50;
+//        contentView.addView(iv, -1, newParams);
+//
+//
+//        AnimatedVectorDrawableCompat bf =
+//                AnimatedVectorDrawableCompat.create(this, R.drawable.butterfly0);
+//
+//       // bf.get
+//
+////        iv.setImageDrawable(bf);
+//        iv.setBackgroundDrawable(bf);
+//
+//        bf.setCallback(iv);
+//
+//        bf.start();
+//
+//    }
 
     private void animateButterfly(int resourceId) {
-        ImageView bf = (ImageView) findViewById(resourceId);
-        AnimationDrawable frameAnimation = (AnimationDrawable) bf.getDrawable();
-        frameAnimation.setCallback(bf);
-        frameAnimation.setVisible(true, true);
-        frameAnimation.start();
+//        ImageView bf = (ImageView) findViewById(resourceId);
+
+        AppCompatImageView bv = (AppCompatImageView) findViewById(resourceId);
+        bv.setOnClickListener(this);
+        AnimatedVectorDrawableCompat drawable = (AnimatedVectorDrawableCompat) bv.getDrawable();
+        drawable.setCallback(bv);
+        drawable.start();
+
+//        AnimationDrawable frameAnimation = (AnimationDrawable) bf.getDrawable();
+//        frameAnimation.setCallback(bf);
+//        frameAnimation.setVisible(true, true);
+//        frameAnimation.start();
+
+//        VectorDrawableCo frame = frameAnimation.getFrame(0);
+
 
     }
 
 
-    public void onButterflyClicked(View view) {
+    @Override
+    public void onClick(View view) {
         ViewGroup parent = (ViewGroup) view.getParent();
         ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) view.getLayoutParams();
         /*

@@ -211,6 +211,16 @@ collaborate using GitHub. Both students must contribute.
 
 ---
 
+### Lesson 8
+
+     Sound & Music, Bug reporting
+
+[Slides](https://goo.gl/d8mepK)
+
+
+
+---
+
 ####Download
 [lesson 7 apk](examples/7.apk)     
     
@@ -223,4 +233,5 @@ collaborate using GitHub. Both students must contribute.
 - Lesson #5: https://goo.gl/gVRMt2
 - Lesson #6: https://goo.gl/hY7ALc
 - Lesson #7: https://goo.gl/adGjJf
+- Lesson #8: https://goo.gl/d8mepK
 

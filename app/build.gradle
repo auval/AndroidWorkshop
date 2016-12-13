@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "org.shenkar.auval.codesamples"
         minSdkVersion 16
@@ -10,6 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        // needed to use vectors on earlier versions
         vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
@@ -44,6 +45,7 @@ dependencies {
      * SVG support
      */
     compile 'com.android.support:support-vector-drawable:25.0.1'
+    compile 'com.android.support:animated-vector-drawable:25.0.1'
     testCompile 'junit:junit:4.12'
 
     /**

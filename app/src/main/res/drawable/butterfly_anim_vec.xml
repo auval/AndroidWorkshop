@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/butterfly_5px">
+
+    <target
+        android:name="right_wing"
+        android:animation="@animator/butterfly_rw_animator"/>
+    <target
+        android:name="left_wing"
+        android:animation="@animator/butterfly_lw_animator"/>
+
+
+</animated-vector>
