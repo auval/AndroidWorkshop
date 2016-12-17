@@ -43,6 +43,11 @@
         <activity
             android:name=".SvgViewsActivity"
             android:screenOrientation="landscape"/>
+        <activity
+            android:name=".SoundActivity"
+            android:label="@string/title_activity_sound"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

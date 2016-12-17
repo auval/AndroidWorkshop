@@ -87,5 +87,6 @@
         <item>Brown</item>
         <item>White</item>
     </string-array>
+    <string name="title_activity_sound">SoundActivity</string>
 
 </resources>

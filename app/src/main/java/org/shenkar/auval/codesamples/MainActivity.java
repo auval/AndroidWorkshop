@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         mValues.add(new ArrayItem("Lecture 7c: Animation List (with SVG)", SvgViewsActivity
                 .class));
         mValues.add(new ArrayItem("Lecture 7d: SVG on Bitmap background", BmpAndSvgActivity.class));
+        mValues.add(new ArrayItem("Lecture 8: Sound", SoundActivity.class));
 
     }
 
