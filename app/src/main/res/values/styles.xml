@@ -14,13 +14,21 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <!-- overrides all icons, but not compat (21+) -->
+        <!--
+          overrides everything that has tint attribute, but not compat (21+)
+          it overridden also svg that was used as a bg
+        <item name="android:tint">@color/colorActionButtons</item>
+        -->
+    </style>
+
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="android:tint">@color/colorActionButtons</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:tint">@color/colorActionButtons</item>
+    </style>
 
 
 </resources>
