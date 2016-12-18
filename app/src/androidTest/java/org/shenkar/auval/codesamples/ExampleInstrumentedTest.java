@@ -4,6 +4,8 @@ import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.mta.sharedutils.Util;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -23,4 +25,20 @@ public class ExampleInstrumentedTest {
 
         assertEquals("org.shenkar.auval.codesamples", appContext.getPackageName());
     }
+
+    /**
+     * example of how to test some logic from my main code
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testMyThreadUtil() throws Exception {
+
+        // my method is only valid with Android API's, since it uses Looper
+        @Util.THREAD_TYPE int threadType = Util.getThreadType();
+
+        // tests are running on a main thread
+        assertEquals(threadType, Util.TH_UI);
+    }
+
 }

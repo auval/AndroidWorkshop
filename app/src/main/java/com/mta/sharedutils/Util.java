@@ -19,6 +19,7 @@ package com.mta.sharedutils;
 import android.content.Context;
 import android.os.Looper;
 import android.support.annotation.IntDef;
+import android.support.v4.util.Pools;
 import android.util.Log;
 import android.util.TypedValue;
 
@@ -32,8 +33,19 @@ import static java.lang.annotation.RetentionPolicy.SOURCE;
 /**
  * This class has a collection of helper methods useful in any app, you can take it as-is or change whatever you want.
  * I use a similar Util class in my production apps, and publish it here for an Android Course I give at Shenkar Engineering College
- *
- * Created by amir uval on 11/8/16.
+ * <p>
+ * Utilities include:
+ * (1) getThreadType() - easily check at runtime if you're on the main thread or a user thread.
+ * (2) assertTrue() - convenience method to let your app crash during development, if an
+ * assumption you have fails. During production you can set it to just report back to you instead
+ * of crashing the app. (use Fabric for the reporting part).
+ * (3) acquireStringBuilder() / releaseStringBuilder() - smart pooling of a frequently used
+ * class, avoiding many allocations and garbage collection.
+ * You can use this pattern for other frequently used classes. (for example: RectF)
+ * (4) dpToPx() - convenient for low level graphics, where the platform won't do this for you.
+ * <p>
+ * Everything in this class was originally developed by Amir Uval (MindTheApps).
+ * Open sourced under Apache License, Version 2.0 (Attribution required)
  */
 public class Util {
 
@@ -46,45 +58,37 @@ public class Util {
     public static final int TH_ANY = 0;
     public static final int TH_UI = 1;
     public static final int TH_WORKER = 2;
-    /**
-     * This is how to define statics in a way that take advantage of InteliJ auto complete (code time) and Lint checks (compile time)
-     * and that has zero cost in runtime.
-     * This way of declaring such "magic" variables with @interface is called "Annotations"
-     *
-     * Read more about it here:
-     * https://developer.android.com/studio/write/annotations.html
-     *
-     * Session wrapper id
-     */
-    @Retention(SOURCE)
-    @IntDef({
-            TH_ANY,//0
-            TH_UI,//1
-            TH_WORKER,//2
-    })
-    public @interface THREAD_TYPE {
+    private static Pools.SimplePool<StringBuilder> _sbPool = null;
+
+    static {
+        _sbPool = new Pools.SimplePool<>(20);
     }
 
     /**
-     * This is
+     * StringBuffer Pool - use this instead of "new StringBuilder()" in your code
+     * <p>
+     * after using the StringBuilder, make sure to call:
+     * Util.releaseStringBuilder(sb);
      *
-     * @return
+     * @return an empty StringBuilder
      */
-    public static
-    @THREAD_TYPE
-    int getThreadType() {
-        return Looper.myLooper().equals(Looper.getMainLooper()) ? TH_UI : TH_WORKER;
+    public static StringBuilder acquireStringBuilder() {
+        StringBuilder sb = _sbPool.acquire();
+        if (sb == null) {
+            sb = new StringBuilder();
+        } else {
+            sb.setLength(0);
+        }
+        return sb;
     }
-
 
     /**
      * A useful "assertion" method:
-     *
+     * <p>
      * example use:
      * say you call a method and expect the return value ret to be 3, you can make sure of that this way:
-     *
+     * <p>
      * Util.assertTrue(ret==3,"Wtf? I've just got %s instead of 3 from this method",ret);
-     *
      *
      * @param a
      * @param f
@@ -131,6 +135,20 @@ To enable it, set this value in this class statically to true, and in runtime se
     }
 
     /**
+     * Convert device independent pixel (dp) dimension to px, according to screen pixel density.
+     * If you need this conversion a lot, it's best to calculate this once for 1 dp
+     * and put the result in a static variable for a more efficient use later.
+     *
+     * @param context
+     * @param dp
+     * @return
+     */
+    public static float dpToPx(Context context, int dp) {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.getResources().getDisplayMetrics());
+    }
+
+
+    /**
      * Some low level stuff to make the exception point to the correct method throwing the exception.
      * Or else all the assertions will point to the "assertTrue" method as the crash point.
      *
@@ -147,15 +165,44 @@ To enable it, set this value in this class statically to true, and in runtime se
     }
 
     /**
-     * Convert device independent pixel (dp) dimension to px, according to screen pixel density.
-     * If you need this conversion a lot, it's best to calculate this once for 1 dp
-     * and put the result in a static variable for a more efficient use later.
+     * This is
      *
-     * @param context
-     * @param dp
      * @return
      */
-    public static float dpToPx(Context context, int dp) {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.getResources().getDisplayMetrics());
+    public static
+    @THREAD_TYPE
+    int getThreadType() {
+        return Looper.myLooper().equals(Looper.getMainLooper()) ? TH_UI : TH_WORKER;
     }
+
+    public static void releaseStringBuilder(StringBuilder sb) {
+        try {
+            _sbPool.release(sb);
+        } catch (IllegalStateException e) {
+            assertTrue(false, "Trying to release a StringBuilder already in the pool. Check your " +
+                    "code! %s", e);
+        }
+    }
+
+
+    /**
+     * This is how to define statics in a way that take advantage of InteliJ auto complete (code time) and Lint checks (compile time)
+     * and that has zero cost in runtime.
+     * This way of declaring such "magic" variables with @interface is called "Annotations"
+     * <p>
+     * Read more about it here:
+     * https://developer.android.com/studio/write/annotations.html
+     * <p>
+     * Session wrapper id
+     */
+    @Retention(SOURCE)
+    @IntDef({
+            TH_ANY,//0
+            TH_UI,//1
+            TH_WORKER,//2
+    })
+    public @interface THREAD_TYPE {
+    }
+
+
 }
