@@ -213,10 +213,11 @@ collaborate using GitHub. Both students must contribute.
 
 ### Lesson 8
 
-     Sound & Music, Bug reporting
+     Sound & Music, Testing
 
 [Slides](https://goo.gl/d8mepK)
 
+testing from command line: `gradlew test`
 
 
 ---
