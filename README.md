@@ -139,7 +139,8 @@ Useful **git** commands:
 
 - [Settings walkthrough](https://docs.google.com/document/d/1PVNrj7HtfjqAsHtnUnfLOSoTKthzemtfpbvQ-3CBE4U/edit?usp=sharing)
   Every student implements on his/her pc during class.
-
+    - [the resulting project](https://github.com/auval/MinimalSettingsActivity) - use this as a reference!
+    
 - Scene transition
     - example: [SceneTransitionActivity](app/src/main/java/org/shenkar/auval/codesamples/SceneTransitionActivity.java)
     - [diff](https://github.com/auval/AndroidWorkshop/compare/5...5.1)
@@ -213,9 +214,21 @@ collaborate using GitHub. Both students must contribute.
 
 ### Lesson 8
 
-     Sound & Music, Testing
+     Sound & Music
 
 [Slides](https://goo.gl/d8mepK)
+
+---
+
+### Lesson 9
+
+	- Testing
+	- Firebase Analytics
+	- Building APK for production
+
+[Slides](https://goo.gl/ekn88F)
+
+
 
 testing from command line: `gradlew test`
 
@@ -232,7 +245,12 @@ testing from command line: `gradlew test`
 - Lesson #3: https://goo.gl/P2hWLP
 - Lesson #4: https://goo.gl/CXtCcy
 - Lesson #5: https://goo.gl/gVRMt2
+   - [Homework Review](https://docs.google.com/presentation/d/1v51eXGzaS7Ge1cYj5Z81LMd_B9h7yuwAVAjvr-zVFPA/edit?usp=sharing)
+     Settings of activity transition
 - Lesson #6: https://goo.gl/hY7ALc
+   - [Homework Review](https://docs.google.com/presentation/d/1GlmWs3S3YwVh0ZrKXt7ePNtEFHEtJ6aI7rGwN6L-lds/edit?usp=sharing)
+     Low level graphics: Stretched Hello
 - Lesson #7: https://goo.gl/adGjJf
 - Lesson #8: https://goo.gl/d8mepK
+- Lesson #9: https://goo.gl/ekn88F
 
