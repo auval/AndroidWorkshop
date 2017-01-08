@@ -222,12 +222,17 @@ collaborate using GitHub. Both students must contribute.
 
 ### Lesson 9
 
+    - Help with projects
+
+[Slides](https://goo.gl/ekn88F)
+
+### Lesson 10
+
 	- Testing
 	- Firebase Analytics
 	- Building APK for production
 
-[Slides](https://goo.gl/ekn88F)
-
+[Slides](https://goo.gl/W8wHJx)
 
 
 testing from command line: `gradlew test`
@@ -253,4 +258,5 @@ testing from command line: `gradlew test`
 - Lesson #7: https://goo.gl/adGjJf
 - Lesson #8: https://goo.gl/d8mepK
 - Lesson #9: https://goo.gl/ekn88F
+- Lesson #10: https://goo.gl/W8wHJx
 

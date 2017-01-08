@@ -61,7 +61,7 @@ public class ExampleUnitTest {
             assertEquals(stringBuilder.length(), 6);
             // commented out >> Util.releaseStringBuilder(stringBuilder);
         }
-        // don't worry about not releasing: the test does not affect anything external...
+        // don't worry about not releasing the StringBuilder: the test does not affect anything external...
 
     }
 
