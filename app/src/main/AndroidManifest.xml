@@ -49,6 +49,10 @@
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             />
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="5d381eaa5197377287cdabf314413bb90db44ebc" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

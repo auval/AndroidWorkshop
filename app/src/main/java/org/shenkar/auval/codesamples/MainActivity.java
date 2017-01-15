@@ -14,9 +14,11 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.mta.sharedutils.AsyncHandler;
 import com.mta.sharedutils.UiHandler;
 
+import io.fabric.sdk.android.Fabric;
 import org.shenkar.auval.db.DbHelper;
 
 import java.util.ArrayList;
@@ -123,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
 
         // +v4.1
