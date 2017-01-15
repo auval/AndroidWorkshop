@@ -260,3 +260,6 @@ testing from command line: `gradlew test`
 - Lesson #9: https://goo.gl/ekn88F
 - Lesson #10: https://goo.gl/W8wHJx
 
+---
+
+[project specifications](https://docs.google.com/document/d/1ENtrWbBxyko6rBAhz2BS_AixoPC0ouw-7P3f4nj_FiY/edit?usp=sharing)
