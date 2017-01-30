@@ -241,7 +241,7 @@ testing from command line: `gradlew test`
 ---
 
 ####Download
-[lesson 7 apk](examples/7.apk)     
+[Project apk](examples/app-debug.apk)     
     
 
 ####All the lessons slides
