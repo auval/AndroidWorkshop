@@ -1,11 +1,14 @@
 package org.shenkar.auval.codesamples;
 
+import android.graphics.drawable.AnimatedVectorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.graphics.drawable.AnimatedVectorDrawableCompat;
 import android.support.transition.ChangeBounds;
 import android.support.transition.Transition;
 import android.support.transition.TransitionManager;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatImageView;
 import android.view.View;
@@ -62,9 +65,17 @@ public class SvgViewsActivity extends AppCompatActivity implements View.OnClickL
 
         AppCompatImageView bv = (AppCompatImageView) findViewById(resourceId);
         bv.setOnClickListener(this);
-        AnimatedVectorDrawableCompat drawable = (AnimatedVectorDrawableCompat) bv.getDrawable();
-        drawable.setCallback(bv);
-        drawable.start();
+
+        Drawable drawable1 = bv.getDrawable();
+        drawable1.setCallback(bv);
+
+        if (drawable1 instanceof AnimatedVectorDrawableCompat) {
+            AnimatedVectorDrawableCompat drawable = (AnimatedVectorDrawableCompat) drawable1;
+            drawable.start();
+        } else {
+            AnimatedVectorDrawable drawable = (AnimatedVectorDrawable) drawable1;
+            drawable.start();
+        }
 
 //        AnimationDrawable frameAnimation = (AnimationDrawable) bf.getDrawable();
 //        frameAnimation.setCallback(bf);
