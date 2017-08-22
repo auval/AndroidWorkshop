@@ -1,4 +1,4 @@
-package com.mta.util;
+package com.mta.sharedutils;
 
 import android.os.Bundle;
 import android.os.Handler;
