@@ -17,7 +17,7 @@ repositories {
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "org.shenkar.auval.codesamples"
         minSdkVersion 16
@@ -52,22 +52,22 @@ dependencies {
     // the 'design' library is needed for floating action buttons (FAB) and more.
     // https://developer.android.com/topic/libraries/support-library/features.html
 
-    compile 'com.android.support:appcompat-v7:26.0.0'
-    compile 'com.android.support:design:26.0.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:support-v4:26.0.0'
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:design:26.1.0'
+    compile 'com.android.support.constraint:constraint-layout:1.1.0'
+    compile 'com.android.support:support-v4:26.1.0'
     /**
      * SVG support
      */
-    compile 'com.android.support:support-vector-drawable:26.0.0'
-    compile 'com.android.support:animated-vector-drawable:26.0.0'
+    compile 'com.android.support:support-vector-drawable:26.1.0'
+    compile 'com.android.support:animated-vector-drawable:26.1.0'
     testCompile 'junit:junit:4.12'
-    testCompile 'org.robolectric:robolectric:3.2.2'
+    testCompile 'org.robolectric:robolectric:3.6.1'
 
     /**
      * evolution of ListView
      */
-    compile 'com.android.support:recyclerview-v7:26.0.0'
+    compile 'com.android.support:recyclerview-v7:26.1.0'
     compile('com.crashlytics.sdk.android:crashlytics:2.6.5@aar') {
         transitive = true;
     }
